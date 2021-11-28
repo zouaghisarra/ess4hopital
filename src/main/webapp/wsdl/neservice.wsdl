@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="NeServiceService" targetNamespace="http://service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://service/" schemaLocation="neservice_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="chercherResponse">
+    <wsdl:part name="parameters" element="tns:chercherResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="chercher">
+    <wsdl:part name="parameters" element="tns:chercher">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="NeService">
+    <wsdl:operation name="chercher">
+      <wsdl:input name="chercher" message="tns:chercher">
+    </wsdl:input>
+      <wsdl:output name="chercherResponse" message="tns:chercherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NeServiceServiceSoapBinding" type="tns:NeService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="chercher">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="chercher">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="chercherResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NeServiceService">
+    <wsdl:port name="NeServicePort" binding="tns:NeServiceServiceSoapBinding">
+      <soap:address location="http://localhost:8090/ess4hopital/services/NeServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

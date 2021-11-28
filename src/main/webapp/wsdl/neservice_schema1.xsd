@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service/" elementFormDefault="unqualified" targetNamespace="http://service/" version="1.0">
+<xs:element name="chercher" type="tns:chercher"/>
+<xs:element name="chercherResponse" type="tns:chercherResponse"/>
+<xs:complexType name="chercher">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="chercherResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:nouveauNe"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="nouveauNe">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cinpere" type="xs:string"/>
+      <xs:element minOccurs="0" name="datenaissance" type="xs:string"/>
+      <xs:element minOccurs="0" name="idne" type="xs:string"/>
+      <xs:element minOccurs="0" name="nompere" type="xs:string"/>
+      <xs:element minOccurs="0" name="prenomne" type="xs:string"/>
+      <xs:element minOccurs="0" name="prenompere" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
